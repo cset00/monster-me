@@ -8,7 +8,11 @@ let imgs = [
   { url: 'body/mouth-25.png', x: 50, y: 40, sw: 50, sh: 50 }
   // { url: 'body/nose-76.png', x: 68, y: 48, sw: 10, sh: 10 },
   // { url: 'body/texture-53.png', x: 50, y: 40, sw: 50, sh: 50 },
-  
+]
+
+let eyesmouth = [
+  { url: 'body/eyes-40.png', x: 22, y: 0, sw: 100, sh: 100 },
+  { url: 'body/mouth-25.png', x: 50, y: 40, sw: 50, sh: 50 }
 ]
 
 $(document).ready(function(){
@@ -51,7 +55,7 @@ $(document).ready(function(){
   myAddEventListener('.legs', 'body-part', imgs[1])
   myAddEventListener('.eyes', 'body-part', imgs[3])
   myAddEventListener('.mouths', 'body-part', imgs[4])
-  myAddEventListener('.noses', 'body-part', imgs[5])
+  // myAddEventListener('.noses', 'body-part', imgs[5])
   // myAddEventListener('.textures', 'body-part', imgs[6])
 
 
@@ -61,15 +65,32 @@ $(document).ready(function(){
   })
 
   $('h3').click(function(e){
-    $(e.target).siblings().toggleClass('hidden')
+    $(e.target).parent().find('.sibling').toggleClass('hidden')
   })
 
   $('.colors').click(function(e){
     if (e.target.classList.contains('color-box')){
+      // color tinting
+      // console.log(window.getComputedStyle(e.target, null).getPropertyValue('background-color'))
+      let colorrr = window.getComputedStyle(e.target, null).getPropertyValue('background-color')
+      let canvas = document.querySelector('canvas')
+      let ctx = canvas.getContext('2d')
+      ctx.fillStyle = colorrr
+      ctx.globalCompositeOperation = 'source-in'
+      ctx.fillRect(0,0,200,200)
+      // eyesmouth.forEach(depict)
+
+      // ctx.drawImage(imgs[2], 22, 0, 100, 100)
+      // ctx.drawImage(imgs[3], 50, 40, 50, 50)
+      
+      
+
+      
+      
       
     }
     
-    
+   
   })
 
 })

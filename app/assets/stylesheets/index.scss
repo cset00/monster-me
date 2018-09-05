@@ -1,5 +1,6 @@
-body {
-  
+h1 {
+  font-family: 'Frijole', cursive;
+  text-align: center;
 }
 
 .container {
@@ -8,9 +9,7 @@ body {
 }
 
 .left {
-  display: flex; 
-  flex-direction: column-reverse;
-  justify-content: flex-end;
+  
   /* width: 500px; */
   width: 50vw;
   /* padding-left: 40px; */

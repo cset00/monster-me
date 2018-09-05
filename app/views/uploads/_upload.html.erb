@@ -1,0 +1,23 @@
+<h2><%#= link_to upload.title, upload_path(upload) %></h2>
+
+<%#= image_tag(upload.image.thumb.url) %>
+<%#= upload.bodypart %>
+ 
+
+ 
+<p><%#= link_to 'Edit', edit_upload_path(upload) %></p>
+
+
+
+<% if upload.image? %>
+    <%= image_tag(upload.image.thumb.url) %>
+    <%= upload.bodypart %>
+
+    <%= form_tag "/uploads/#{upload.id}", method: "delete" do %>
+      <input type="hidden" name="tag" value="<% upload.id %>">
+      <button>delete</button>
+    <% end %>
+    
+<% end %>
+
+<hr>
