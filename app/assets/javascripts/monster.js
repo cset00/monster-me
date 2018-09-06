@@ -6,7 +6,27 @@ let imgs = [
   { url: 'body/orange-body-02.png', x: 45, y: 55, sw: 200, sh: 200 },
   { url: 'body/eyes-48.png', x: 88, y: 40, sw: 110, sh: 110 },
   { url: 'body/mouth-25.png', x: 100, y: 70, sw: 90, sh: 90 }
-]
+];
+
+// let config = {
+//   'positions': {
+//     'legs': {x: 67, y: 190, sw: 150, sh: 150 },
+//   },
+//   'legs': [
+//     'body/orange-legs-12.png',
+//     'body/orange-legs-13.png',
+//     'body/orange-legs-11.png',
+//     'body/orange-legs-16.png'
+//   ]
+// };
+
+// let selections = {
+//   'l': 1,
+//   'a': 4,
+//   'b': 0,
+//   'e': 2,
+//   'm': 3,
+// }
 
 
 $(document).ready(function(){
