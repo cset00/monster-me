@@ -47,6 +47,7 @@ $(document).ready(function(){
   const canvas = document.querySelector('canvas')
   const getContext = () => canvas.getContext('2d')
   imgs.forEach(depict)
+  // depict(imgs[0])
 
   canvas.width = 300
   canvas.height = 300
@@ -81,7 +82,7 @@ $(document).ready(function(){
   }
 
   //params: color, 
-  renderNewColor = color => {
+  renderNewColor = async color => {
     imgs.forEach(bodypart => {
       let splitArr = bodypart.url.split('/')
       let link = splitArr[splitArr.length-1].split('-')
@@ -92,7 +93,12 @@ $(document).ready(function(){
     })
     
     fillWhite()
-    imgs.forEach(depict)
+    // imgs.forEach(depict)
+    await depict(imgs[0])
+    await depict(imgs[1])
+    await depict(imgs[2])
+    await depict(imgs[3])
+    await depict(imgs[4])
   }
 
 
