@@ -6,14 +6,16 @@ h1 {
   font-family: 'Sigmar One', cursive;
   text-align: center;
   color: #4A148C;
+  font-size: 3em;
 }
 
 h3 {
-  background-color: rgb(212, 211, 211);
+  background-color: rgb(221, 215, 228);
   // border-radius: 10px 10px 0 0;
-  border: 2px solid grey;
+  // border: 2px solid #4A148C;
   padding: 10px;
-  width: 250px;
+  // width: 250px;
+  margin: 0;
 }
 
 canvas {
@@ -50,6 +52,9 @@ body {
 
 }
 
+.sibling {
+  margin: 20px 0;
+}
 
 .body-part {
   width: 50px;
@@ -66,11 +71,13 @@ body {
 }
 
 .color-box {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   display: inline-block;
   // margin-right: 10px;
   border-radius: 10px;
+  margin: 20px 0;
+
 }
 
 .orange {
@@ -91,4 +98,25 @@ body {
 
 .hidden {
   display: none;
+}
+
+.colors, .bodies, .arms, .legs, .eyes, .mouths {
+  border: 1px solid #4A148C;
+  width: 250px;
+}
+
+.sibling {
+  padding-left: 10px;
+}
+
+a {
+  font-size: 1.5em;
+}
+
+.attr {
+  display: block;
+  color: grey;
+  text-decoration: none;
+  margin: 10px;
+  font-size: 1em;
 }

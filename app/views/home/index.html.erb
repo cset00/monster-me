@@ -4,8 +4,8 @@
     
     <canvas></canvas>
 
-    <a href="#" class="button" id="download-btn" download="monsterise-me.png">Download</a>
-    
+    <a href="#" class="button" id="download-btn" download="monsterise-me.png">Save & download</a>
+    <a class="attr" href='https://www.freepik.com/free-vector/create-your-monster_821165.htm'>Monster design by Freepik</a>
   </div>
   <div class="listeners">
     
@@ -22,16 +22,16 @@
     <section class="bodies">
       <h3>body</h3>
       <div class="sibling">
-        <img class="body-part" src="/body/body-02.png" alt="">
-        <img class="body-part" src="body/body-03.png" alt="">
-        <img class="body-part" src="body/body-04.png" alt="">
-        <img class="body-part" src="body/body-05.png" alt="">
-        <img class="body-part" src="body/body-06.png" alt="">
-        <img class="body-part" src="body/body-07.png" alt="">
-        <img class="body-part" src="body/body-08.png" alt="">
-        <img class="body-part" src="body/body-09.png" alt="">
-        <img class="body-part" src="body/body-10.png" alt="">
-        <img class="body-part" src="body/body-11.png" alt="">
+        <img class="body-part" src="body/orange-body-02.png" alt="">
+        <img class="body-part" src="body/orange-body-03.png" alt="">
+        <img class="body-part" src="body/orange-body-04.png" alt="">
+        <img class="body-part" src="body/orange-body-05.png" alt="">
+        <img class="body-part" src="body/orange-body-06.png" alt="">
+        <img class="body-part" src="body/orange-body-07.png" alt="">
+        <img class="body-part" src="body/orange-body-08.png" alt="">
+        <img class="body-part" src="body/orange-body-09.png" alt="">
+        <img class="body-part" src="body/orange-body-10.png" alt="">
+        <img class="body-part" src="body/orange-body-11.png" alt="">
         <% @bodies.each do |body| %>
           <%= image_tag(body.image.thumb.url, :class => "body-part") %>
         <%end%>
@@ -50,15 +50,14 @@
     <section class="arms">
       <h3>arms</h3>
       <div class="sibling hidden">
-        <img class="body-arm" src="body/arms-65.png" alt="">
-        <img class="body-arm" src="body/arms-66.png" alt="">
-        <img class="body-arm" src="body/arms-67.png" alt="">
-        <img class="body-arm" src="body/arms-68.png" alt="">
-        <img class="body-arm" src="body/arms-69.png" alt="">
-        <img class="body-arm" src="body/arms-70.png" alt="">
-        <%# <img class="body-arm" src="body/arms-71.png" alt=""> %>
-        <img class="body-arm" src="body/arms-72.png" alt="">
-        <img class="body-arm" src="body/arms-74.png" alt="">
+        <img class="body-arm" src="body/orange-arms-65.png" alt="">
+        <img class="body-arm" src="body/orange-arms-66.png" alt="">
+        <img class="body-arm" src="body/orange-arms-67.png" alt="">
+        <img class="body-arm" src="body/orange-arms-68.png" alt="">
+        <img class="body-arm" src="body/orange-arms-69.png" alt="">
+        <img class="body-arm" src="body/orange-arms-70.png" alt="">
+        <img class="body-arm" src="body/orange-arms-72.png" alt="">
+        <img class="body-arm" src="body/orange-arms-74.png" alt="">
         <% @arms.each do |arm| %>
           <%= image_tag(arm.image.thumb.url, :class => "body-part") %>
         <%end%>
@@ -77,17 +76,17 @@
     <section class="legs">
       <h3>legs</h3>
       <div class="sibling hidden">
-        <img class="body-part" src="body/legs-12.png" alt="">
-        <img class="body-part" src="body/legs-13.png" alt="">
-        <img class="body-part" src="body/legs-14.png" alt="">
-        <img class="body-part" src="body/legs-15.png" alt="">
-        <img class="body-part" src="body/legs-17.png" alt="">
-        <img class="body-part" src="body/legs-18.png" alt="">
-        <img class="body-part" src="body/legs-19.png" alt="">
-        <img class="body-part" src="body/legs-20.png" alt="">
-        <img class="body-part" src="body/legs-21.png" alt="">
-        <img class="body-part" src="body/legs-23.png" alt="">
-        <img class="body-part" src="body/legs-24.png" alt="">
+        <img class="body-part" src="body/orange-legs-12.png" alt="">
+        <img class="body-part" src="body/orange-legs-13.png" alt="">
+        <img class="body-part" src="body/orange-legs-14.png" alt="">
+        <img class="body-part" src="body/orange-legs-15.png" alt="">
+        <img class="body-part" src="body/orange-legs-17.png" alt="">
+        <img class="body-part" src="body/orange-legs-18.png" alt="">
+        <img class="body-part" src="body/orange-legs-19.png" alt="">
+        <img class="body-part" src="body/orange-legs-20.png" alt="">
+        <img class="body-part" src="body/orange-legs-21.png" alt="">
+        <img class="body-part" src="body/orange-legs-23.png" alt="">
+        <img class="body-part" src="body/orange-legs-24.png" alt="">
         <% @legs.each do |leg| %>
           <%= image_tag(leg.image.thumb.url, :class => "body-part") %>
         <%end%>
@@ -107,16 +106,16 @@
       <h3>eyes</h3>
       <div class="sibling hidden">
         <img class="body-part" src="body/eyes-37.png" alt="">
-        <img class="body-part" src="body/eyes-38.png" alt="">
+        <img class="body-part chg" src="body/orange-eyes-38.png" alt="">
         <img class="body-part" src="body/eyes-39.png" alt="">
         <img class="body-part" src="body/eyes-40.png" alt="">
         <img class="body-part" src="body/eyes-41.png" alt="">
         <img class="body-part" src="body/eyes-42.png" alt="">
-        <img class="body-part" src="body/eyes-43.png" alt="">
-        <img class="body-part" src="body/eyes-44.png" alt="">
+        <img class="body-part chg" src="body/orange-eyes-43.png" alt="">
+        <img class="body-part chg" src="body/orange-eyes-44.png" alt="">
         <img class="body-part" src="body/eyes-45.png" alt="">
         <img class="body-part" src="body/eyes-46.png" alt="">
-        <img class="body-part" src="body/eyes-47.png" alt="">
+        <img class="body-part chg" src="body/orange-eyes-47.png" alt="">
         <img class="body-part" src="body/eyes-48.png" alt="">
         <% @eyes.each do |eye| %>
           <%= image_tag(eye.image.thumb.url, :class => "body-part") %>
