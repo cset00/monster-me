@@ -1,15 +1,13 @@
 console.log('hello')
 
 let imgs = [
-  { url: 'body/arms-65.png', x: 15, y: 50, sw: 120, sh: 90 },
-  { url: 'body/legs-15.png', x: 37, y: 100, sw: 75, sh: 75 },
-  { url: 'body/body-02.png', x: 25, y: 25, sw: 100, sh: 100 },
-  { url: 'body/eyes-40.png', x: 22, y: 0, sw: 100, sh: 100 },
-  { url: 'body/mouth-25.png', x: 50, y: 40, sw: 50, sh: 50 }
-  // { url: 'body/nose-76.png', x: 68, y: 48, sw: 10, sh: 10 },
-  // { url: 'body/texture-53.png', x: 50, y: 40, sw: 50, sh: 50 },
-  
+  { url: 'body/orange-legs-15.png', x: 67, y: 190, sw: 150, sh: 150 },
+  { url: 'body/orange-arms-65.png', x: 25, y: 110, sw: 240, sh: 160 },
+  { url: 'body/orange-body-02.png', x: 45, y: 55, sw: 200, sh: 200 },
+  { url: 'body/eyes-48.png', x: 88, y: 40, sw: 110, sh: 110 },
+  { url: 'body/mouth-25.png', x: 100, y: 70, sw: 90, sh: 90 }
 ]
+
 
 $(document).ready(function(){
   const loadImage = url => {
@@ -29,13 +27,17 @@ $(document).ready(function(){
     })
   }
   
+  fillWhite = () => {
+    let canvas = document.querySelector('canvas')
+    let ctx = canvas.getContext('2d')
+    ctx.fillStyle = 'white'
+    ctx.fillRect(0,0,300,300)
+  }
+
   myAddEventListener = (selector, clickableClass, bodyPart) => {
     document.querySelector(selector).addEventListener('click', function(e){
       if(e.target.classList.contains(clickableClass)){
-        let canvas = document.querySelector('canvas')
-        let ctx = canvas.getContext('2d')
-        ctx.fillStyle = 'white'
-        ctx.fillRect(0,0,200,200)
+        fillWhite()
         bodyPart.url = e.target.src
         imgs.forEach(depict)
       }
@@ -46,30 +48,101 @@ $(document).ready(function(){
   const getContext = () => canvas.getContext('2d')
   imgs.forEach(depict)
 
+  canvas.width = 300
+  canvas.height = 300
+
   myAddEventListener('.bodies', 'body-part', imgs[2])
-  myAddEventListener('.arms', 'body-arm', imgs[0])
-  myAddEventListener('.legs', 'body-part', imgs[1])
+  myAddEventListener('.arms', 'body-arm', imgs[1])
+  myAddEventListener('.legs', 'body-part', imgs[0])
   myAddEventListener('.eyes', 'body-part', imgs[3])
   myAddEventListener('.mouths', 'body-part', imgs[4])
-  myAddEventListener('.noses', 'body-part', imgs[5])
-  // myAddEventListener('.textures', 'body-part', imgs[6])
 
+
+  toggleClassHide = e => {
+    $('.sibling').not(this).each(function(){
+      $(this).addClass('hidden')
+    })
+    $(e.target).parent().find('.sibling').toggleClass('hidden')
+  }
 
   document.querySelector('#download-btn').addEventListener('click', function(e){
     let dataURL = canvas.toDataURL('image/png')
     e.target.href = dataURL
   })
 
-  $('h3').click(function(e){
-    $(e.target).siblings().toggleClass('hidden')
-  })
+  // params: array, color
+  updateColor = (arr, color) => {
+    Array.from(arr).forEach(item => {
+      let splitArr = item.src.split('/')
+      let link = splitArr[splitArr.length-1].split('-')
+      link[0] = color
+      item.src = `body/${link.join('-')}`
+    })
+  }
 
-  $('.colors').click(function(e){
+  //params: color, 
+  renderNewColor = color => {
+    imgs.forEach(bodypart => {
+      let splitArr = bodypart.url.split('/')
+      let link = splitArr[splitArr.length-1].split('-')
+      if (link.length === 3){
+        link[0] = color
+        bodypart.url = `body/${link.join('-')}`
+      }
+    })
+    
+    fillWhite()
+    imgs.forEach(depict)
+  }
+
+
+  changeBodypartsColor = e => {
+    // array of imgs i want to change the src link
+    let bodyArr = $('.bodies').find('.sibling').find('.body-part').slice(0,10)
+    let armsArr = $('.arms').find('.sibling').find('.body-arm')
+    let legsArr = $('.legs').find('.sibling').find('.body-part').slice(0,10)
+    let eyesArr = $('.eyes').find('.sibling').find('.chg')
+    
     if (e.target.classList.contains('color-box')){
-      
+      if (e.target.classList.contains('purple')){
+        updateColor(bodyArr, 'purple')
+        updateColor(armsArr, 'purple')
+        updateColor(legsArr, 'purple')
+        updateColor(eyesArr, 'purple')
+        
+        renderNewColor('purple')
+        
+      } else if (e.target.classList.contains('orange')){
+        updateColor(bodyArr, 'orange')
+        updateColor(armsArr, 'orange')
+        updateColor(legsArr, 'orange')
+        updateColor(eyesArr, 'orange')
+        
+        renderNewColor('orange')
+
+      } else if (e.target.classList.contains('green')){
+        updateColor(bodyArr, 'green')
+        updateColor(armsArr, 'green')
+        updateColor(legsArr, 'green')
+        updateColor(eyesArr, 'green')
+        
+        renderNewColor('green')
+        
+      } else {
+        updateColor(bodyArr, 'pink')
+        updateColor(armsArr, 'pink')
+        updateColor(legsArr, 'pink')
+        updateColor(eyesArr, 'pink')
+        
+        renderNewColor('pink')
+        
+      }
     }
-    
-    
-  })
+  }
+
+  $('h3').click(toggleClassHide)
+  $('.colors').click(changeBodypartsColor)
+  
+
 
 })
