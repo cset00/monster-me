@@ -1,18 +1,46 @@
 h1 {
-  font-family: 'Frijole', cursive;
+
+  // font-family: 'Do Hyeon', sans-serif;
+  // font-family: 'Patrick Hand', cursive;
+  // font-family: 'Schoolbell', cursive;
+  font-family: 'Sigmar One', cursive;
   text-align: center;
+  color: #4A148C;
+}
+
+h3 {
+  background-color: rgb(212, 211, 211);
+  // border-radius: 10px 10px 0 0;
+  border: 2px solid grey;
+  padding: 10px;
+  width: 250px;
+}
+
+canvas {
+  display: block;
+  margin: 20px auto;
+}
+
+.listeners {
+  width: 250px;
+}
+
+section {
+  margin-top: 0px;
+}
+
+body {
+  font-family: 'Schoolbell', cursive;
 }
 
 .container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .left {
-  
-  /* width: 500px; */
   width: 50vw;
-  /* padding-left: 40px; */
   text-align: center;
 }
 
@@ -46,19 +74,19 @@ h1 {
 }
 
 .orange {
-  background-color: orange;
+  background-color: #FF6000;
 }
 
 .purple {
-  background-color: purple;
+  background-color: #4A148C;
 }
 
 .pink {
-  background-color: pink;
+  background-color: #F25F5C;
 }
 
 .green {
-  background-color: greenyellow;
+  background-color: #0097A7;
 }
 
 .hidden {

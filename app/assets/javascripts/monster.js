@@ -1,19 +1,13 @@
 console.log('hello')
 
 let imgs = [
-  { url: 'body/arms-65.png', x: 15, y: 50, sw: 120, sh: 90 },
-  { url: 'body/legs-15.png', x: 37, y: 100, sw: 75, sh: 75 },
-  { url: 'body/body-02.png', x: 25, y: 25, sw: 100, sh: 100 },
-  { url: 'body/eyes-40.png', x: 22, y: 0, sw: 100, sh: 100 },
-  { url: 'body/mouth-25.png', x: 50, y: 40, sw: 50, sh: 50 }
-  // { url: 'body/nose-76.png', x: 68, y: 48, sw: 10, sh: 10 },
-  // { url: 'body/texture-53.png', x: 50, y: 40, sw: 50, sh: 50 },
+  { url: 'body/arms-65.png', x: 25, y: 110, sw: 240, sh: 160 },
+  { url: 'body/legs-15.png', x: 67, y: 190, sw: 150, sh: 150 },
+  { url: 'body/body-02.png', x: 45, y: 55, sw: 200, sh: 200 },
+  { url: 'body/eyes-48.png', x: 88, y: 40, sw: 110, sh: 110 },
+  { url: 'body/mouth-25.png', x: 100, y: 70, sw: 90, sh: 90 }
 ]
 
-let eyesmouth = [
-  { url: 'body/eyes-40.png', x: 22, y: 0, sw: 100, sh: 100 },
-  { url: 'body/mouth-25.png', x: 50, y: 40, sw: 50, sh: 50 }
-]
 
 $(document).ready(function(){
   const loadImage = url => {
@@ -39,7 +33,7 @@ $(document).ready(function(){
         let canvas = document.querySelector('canvas')
         let ctx = canvas.getContext('2d')
         ctx.fillStyle = 'white'
-        ctx.fillRect(0,0,200,200)
+        ctx.fillRect(0,0,300,300)
         bodyPart.url = e.target.src
         imgs.forEach(depict)
       }
@@ -50,13 +44,15 @@ $(document).ready(function(){
   const getContext = () => canvas.getContext('2d')
   imgs.forEach(depict)
 
+  canvas.width = 300
+  canvas.height = 300
+
   myAddEventListener('.bodies', 'body-part', imgs[2])
   myAddEventListener('.arms', 'body-arm', imgs[0])
   myAddEventListener('.legs', 'body-part', imgs[1])
   myAddEventListener('.eyes', 'body-part', imgs[3])
   myAddEventListener('.mouths', 'body-part', imgs[4])
-  // myAddEventListener('.noses', 'body-part', imgs[5])
-  // myAddEventListener('.textures', 'body-part', imgs[6])
+
 
 
   document.querySelector('#download-btn').addEventListener('click', function(e){
@@ -68,29 +64,25 @@ $(document).ready(function(){
     $(e.target).parent().find('.sibling').toggleClass('hidden')
   })
 
-  $('.colors').click(function(e){
-    if (e.target.classList.contains('color-box')){
-      // color tinting
-      // console.log(window.getComputedStyle(e.target, null).getPropertyValue('background-color'))
-      let colorrr = window.getComputedStyle(e.target, null).getPropertyValue('background-color')
-      let canvas = document.querySelector('canvas')
-      let ctx = canvas.getContext('2d')
-      ctx.fillStyle = colorrr
-      ctx.globalCompositeOperation = 'source-in'
-      ctx.fillRect(0,0,200,200)
-      // eyesmouth.forEach(depict)
+  // $('.colors').click(function(e){
+  //   if (e.target.classList.contains('color-box')){
+  //     // color tinting
+  //     // console.log(window.getComputedStyle(e.target, null).getPropertyValue('background-color'))
+  //     let colorrr = window.getComputedStyle(e.target, null).getPropertyValue('background-color')
+  //     let canvas = document.querySelector('canvas')
+  //     let ctx = canvas.getContext('2d')
+  //     ctx.fillStyle = colorrr
+  //     ctx.globalCompositeOperation = 'source-in'
+  //     ctx.fillRect(0,0,200,200)
+  //     // eyesmouth.forEach(depict)
 
-      // ctx.drawImage(imgs[2], 22, 0, 100, 100)
-      // ctx.drawImage(imgs[3], 50, 40, 50, 50)
+  //     // ctx.drawImage(imgs[2], 22, 0, 100, 100)
+  //     // ctx.drawImage(imgs[3], 50, 40, 50, 50)
       
       
-
-      
-      
-      
-    }
+  //   }
     
    
-  })
+  // })
 
 })

@@ -1,10 +1,11 @@
 
 <div class="container">
   <div class="left">
-    <a href="#" class="button" id="download-btn" download="monsterise-me.png">Download</a>
     
     <canvas></canvas>
 
+    <a href="#" class="button" id="download-btn" download="monsterise-me.png">Download</a>
+    
   </div>
   <div class="listeners">
     
@@ -55,9 +56,8 @@
         <img class="body-arm" src="body/arms-68.png" alt="">
         <img class="body-arm" src="body/arms-69.png" alt="">
         <img class="body-arm" src="body/arms-70.png" alt="">
-        <img class="body-arm" src="body/arms-71.png" alt="">
+        <%# <img class="body-arm" src="body/arms-71.png" alt=""> %>
         <img class="body-arm" src="body/arms-72.png" alt="">
-        <img class="body-arm" src="body/arms-73.png" alt="">
         <img class="body-arm" src="body/arms-74.png" alt="">
         <% @arms.each do |arm| %>
           <%= image_tag(arm.image.thumb.url, :class => "body-part") %>
@@ -162,26 +162,6 @@
         <% end %>
       </div>
     </section>
-
-    <%# <section class="noses">
-      <h3>nose</h3>
-      <img class="body-nose hidden" src="body/nose-75.png" alt="">
-      <img class="body-nose hidden" src="body/nose-76.png" alt="">
-      <img class="body-nose hidden" src="body/nose-77.png" alt="">
-      <img class="body-nose hidden" src="body/nose-78.png" alt="">
-    </section>
-
-    <section class="textures">
-      <h3>texture</h3>
-      <img class="body-part hidden" src="body/texture-49.png" alt="">
-      <img class="body-part hidden" src="body/texture-50.png" alt="">
-      <img class="body-part hidden" src="body/texture-51.png" alt="">
-      <img class="body-part hidden" src="body/texture-52.png" alt="">
-      <img class="body-part hidden" src="body/texture-53.png" alt="">
-      <img class="body-part hidden" src="body/texture-54.png" alt="">
-      <img class="body-part hidden" src="body/texture-55.png" alt="">
-      <img class="body-part hidden" src="body/texture-56.png" alt="">
-    </section> %>
 
   </div>
 </div>
