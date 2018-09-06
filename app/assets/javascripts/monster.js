@@ -137,49 +137,36 @@ $(document).ready(function(){
         updateColor(armsArr, 'purple')
         updateColor(legsArr, 'purple')
         updateColor(eyesArr, 'purple')
-        
         renderNewColor('purple')
         
-        
       } else if (e.target.classList.contains('orange')){
-        document.querySelector('.color-box.orange').click()
         updateColor(bodyArr, 'orange')
         updateColor(armsArr, 'orange')
         updateColor(legsArr, 'orange')
         updateColor(eyesArr, 'orange')
-        
         renderNewColor('orange')
-        document.querySelector('.color-box.orange').click()
 
       } else if (e.target.classList.contains('green')){
-        document.querySelector('.color-box.green').click()
         updateColor(bodyArr, 'green')
         updateColor(armsArr, 'green')
         updateColor(legsArr, 'green')
         updateColor(eyesArr, 'green')
-        
         renderNewColor('green')
-        document.querySelector('.color-box.green').click()
-        
+
       } else {
         document.querySelector('.color-box.pink').click()
         updateColor(bodyArr, 'pink')
         updateColor(armsArr, 'pink')
         updateColor(legsArr, 'pink')
         updateColor(eyesArr, 'pink')
-        
         renderNewColor('pink')
-        document.querySelector('.color-box.pink').click()
-        
+
       }
     }
   }
 
   $('h3').click(toggleClassHide)
   $('.colors').click(changeBodypartsColor)
-  
-
-
 
 
 })
