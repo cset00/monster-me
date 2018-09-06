@@ -98,6 +98,7 @@ $(document).ready(function(){
 
   changeBodypartsColor = e => {
     // array of imgs i want to change the src link
+    
     let bodyArr = $('.bodies').find('.sibling').find('.body-part').slice(0,10)
     let armsArr = $('.arms').find('.sibling').find('.body-arm')
     let legsArr = $('.legs').find('.sibling').find('.body-part').slice(0,10)
@@ -142,7 +143,8 @@ $(document).ready(function(){
 
   $('h3').click(toggleClassHide)
   $('.colors').click(changeBodypartsColor)
-  
+  // $('.colors').click()
+
 
 
 })
