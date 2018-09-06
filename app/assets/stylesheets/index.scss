@@ -1,8 +1,4 @@
 h1 {
-
-  // font-family: 'Do Hyeon', sans-serif;
-  // font-family: 'Patrick Hand', cursive;
-  // font-family: 'Schoolbell', cursive;
   font-family: 'Sigmar One', cursive;
   text-align: center;
   color: #4A148C;
@@ -11,20 +7,13 @@ h1 {
 
 h3 {
   background-color: rgb(221, 215, 228);
-  // border-radius: 10px 10px 0 0;
-  // border: 2px solid #4A148C;
   padding: 10px;
-  // width: 250px;
   margin: 0;
 }
 
 canvas {
   display: block;
   margin: 20px auto;
-}
-
-.listeners {
-  width: 250px;
 }
 
 section {
@@ -42,14 +31,13 @@ body {
 }
 
 .left {
-  width: 50vw;
   text-align: center;
+  // width: 500px;
 }
 
 .listeners {
   display: flex;
   flex-direction: column;
-
 }
 
 .sibling {
@@ -65,16 +53,10 @@ body {
   height: 30px;
 }
 
-.body-nose {
-  width: 30px;
-  margin-right: 20px;
-}
-
 .color-box {
   width: 40px;
   height: 40px;
   display: inline-block;
-  // margin-right: 10px;
   border-radius: 10px;
   margin: 20px 0;
 
@@ -121,9 +103,39 @@ a {
   font-size: 1em;
 }
 
-@media (max-width: 600px){
+@media screen and (max-width: 800px)  {
   .container {
     display: flex;
     flex-direction: column;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 4em;
+    text-align: center;
+  }
+
+  .listeners {
+    margin: 0 auto;
+    
+  }
+
+  .colors, .bodies, .arms, .legs, .eyes, .mouths {
+    width: 80vw;
+  }
+
+  h3 {
+    font-size: 2em;
+  }
+
+  canvas {
+    width: 80vw;
+  }
+
+}
+
+@media screen and (min-width: 800px){
+  .left {
+    width: 500px;
   }
 }
