@@ -113,7 +113,7 @@ $(document).ready(function(){
     })
     
     fillWhite()
-    // imgs.forEach(depict)
+    // await imgs.forEach(depict)
     await depict(imgs[0])
     await depict(imgs[1])
     await depict(imgs[2])
@@ -121,6 +121,12 @@ $(document).ready(function(){
     await depict(imgs[4])
   }
 
+  
+  randomiseParts = (min, max) => {
+    // split link and replace number with random number between the range
+    // math floor & math random 
+
+  }
 
   changeBodypartsColor = e => {
     // array of imgs i want to change the src link
